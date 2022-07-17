@@ -15,7 +15,7 @@ function App() {
       <Switch>
         <Route exact path='/' render={routerProps => <Landing {...routerProps} setUser={setUser} />} />
         <Route path='/home' render={routerProps => <Home {...routerProps} user={user} />} />
-        <Route path='/blog' render={routerProps => <Blog {...routerProps} setUser={setUser} />} />
+        <Route path='/blog' component={Blog} />
       </Switch>
     </div>
   );
