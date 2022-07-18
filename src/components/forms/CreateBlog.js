@@ -4,7 +4,7 @@ import axios from 'axios'
 const CreateBlog = (props) => {
     const [formData, setFormData] = useState({
         title: "",
-        details: "",
+        blog: "",
     });
 
     const handleSubmit = (e) => {
@@ -33,15 +33,15 @@ const CreateBlog = (props) => {
             />
 
             <div className="mb-3">
-                <label className="form-label" htmlFor="details">
-                    Details
+                <label className="form-label" htmlFor="blog">
+                    Blog
                 </label>
                 <input
                     className="form-control"
                     type="text"
-                    id="details"
-                    name="details"
-                    value={formData.details}
+                    id="blog"
+                    name="blog"
+                    value={formData.blog}
                     onChange={(e) =>
                         setFormData({ ...formData, [e.target.id]: e.target.value })
                     }

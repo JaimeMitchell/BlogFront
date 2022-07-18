@@ -3,14 +3,14 @@ import { useEffect, useState } from "react";
 import axios from 'axios'
 import CreateBlog from '../forms/CreateBlog'
 const Home = (props) => {
-  const [blogs, setBlogs] = useState(null)
+  const [blogs, setblogs] = useState(null)
 
   useEffect(() => {
     axios.get('http://localhost:4000/blogs', {
       headers: {
         'x-auth-token': localStorage.getItem("userToken")
       }
-    }).then(res => setBlogs(res.data)).catch(err => console.error(err))
+    }).then(res => setblogs(res.data)).catch(err => console.error(err))
   }, [])
 
 
@@ -23,18 +23,18 @@ const Home = (props) => {
       })
       .then((res) => {
         console.log(res.data);
-        setBlogs([...blogs.filter((t) => t._id !== blog._id)]);
+        setblogs([...blogs.filter((t) => t._id !== blog._id)]);
       })
       .catch((err) => console.error(err));
   };
 
   return (
     <div>
-
+      <NavBar user={props.user} />
 
       <h1>Home Page</h1>
-      <NavBar user={props.user} />
-      <CreateBlog setBlogs={setBlogs} blogs={blogs} />
+
+      <CreateBlog setblogs={setblogs} blogs={blogs} />
 
       {blogs && blogs.map(blog => (
         <div key={blog._id}>
