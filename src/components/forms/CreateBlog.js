@@ -4,12 +4,12 @@ import axios from 'axios'
 const CreateBlog = (props) => {
     const [formData, setFormData] = useState({
         title: "",
-        blog: "",
+        content: "",
     });
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        axios.post('http://localhost:4000/blogs', formData, {
+        axios.post('http://localhost:4000/blog', formData, {
             headers: {
                 'x-auth-token': localStorage.getItem("userToken")
             }
@@ -39,9 +39,9 @@ const CreateBlog = (props) => {
                 <input
                     className="form-control"
                     type="text"
-                    id="blog"
-                    name="blog"
-                    value={formData.blog}
+                    id="content"
+                    name="content"
+                    value={formData.content}
                     onChange={(e) =>
                         setFormData({ ...formData, [e.target.id]: e.target.value })
                     }
