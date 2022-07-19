@@ -38,35 +38,39 @@ const Home = (props) => {
   };
 
   return (
-    <div>
+    <div className="container ">
       <NavBar user={props.user} />
 
-      <h1>Home Page</h1>
+      <h2 className='text-center'>Write a li'l blog</h2>
 
-      <CreateBlog setBlogs={setBlogs} blogs={blogs} />
+      <CreateBlog className="p-3" setBlogs={setBlogs} blogs={blogs} />
+      <div className="row P3">
+        {blogs && blogs.map(blog => (
+          <div key={blog._id} className="card col-4 g-3 p-3 rounded-3" alt="gif" style={{ width: "18rem"  }} >
+            {gif.data.length > 0 ? <img src={gif.data[Math.floor(Math.random() * 10)].images.original.url} className="card-img-top rounded-1 P-3" /> : null}
+            <div class="card-body p-2 g-2 border bg-light ">
+              <h5 className="card-title">{blog.title}</h5>
+              <p>{blog.content}{" "} </p>
 
-      {blogs && blogs.map(blog => (
-        <div key={blog._id}>
-          <h6>{blog.title}</h6>
-          {gif.data.length > 0 ? <img src={gif.data[Math.floor(Math.random() * 10)].images.original.url} /> : null}
-          <h6>{blog.content}{" "} <span
-            className='btn btn-danger'
-            onClick={() => handleUpdate(blog)}>
-              X
-            </span>
-            
-            {blog.user === props.user._id && (
-              <span
-                className="btn btn-info"
-                onClick={() => handleUpdate(blog)}
-              >
-                Update
-              </span>
-            )}
-            </h6>
-        </div>
-      ))}
-    </div>
+              {blog.user === props.user._id && (
+                <span
+                  className="btn btn-info"
+                  onClick={() => handleUpdate(blog)}
+                >
+                  Update
+                </span>
+
+              )}<button
+                className='btn btn-danger'
+                onClick={() => handleUpdate(blog)}>
+                X
+              </button>
+
+            </div>
+
+          </div>
+        ))}
+      </div></div>
   );
 };
 

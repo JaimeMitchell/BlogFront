@@ -3,7 +3,7 @@ const Blog = () => {
   return (
     <div>
       <NavBar />
-      <h1>My Blog Page</h1>
+      <h1>A Blog</h1>
     </div>
   );
 };

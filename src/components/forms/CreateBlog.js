@@ -36,7 +36,7 @@ const CreateBlog = (props) => {
                 <label className="form-label" htmlFor="blog">
                     Blog
                 </label>
-                <input
+                <textarea
                     className="form-control"
                     type="text"
                     id="content"

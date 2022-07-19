@@ -37,7 +37,7 @@ const UpdateBlog = (props) => {
                     <label className="form-label" htmlFor="title">
                         Title
                     </label>
-                    <input
+                    <textarea
                         className="form-control"
                         type="text"
                         id="title"
