@@ -1,14 +1,13 @@
 import RegisterForm from "../forms/RegisterForm";
 import LoginForm from "../forms/LoginForm";
 import { useState } from "react";
-
+import moment from 'moment'
 const Landing = (props) => {
   const [hasAccount, setHasAccount] = useState(false);
   const { setUser } = props
   return (
     <div>
-      <h1>Landing Page</h1>
-
+      <h3>It's {moment().format('LT')}, Do you know where your thoughts are?</h3>
       {hasAccount === false ? (
         <div>
           <RegisterForm setUser={setUser} />

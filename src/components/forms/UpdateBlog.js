@@ -49,10 +49,10 @@ const UpdateBlog = (props) => {
                     />
 
                     <div className="mb-3">
-                        <label className="form-label" htmlFor="details">
+                        <label className="form-label" htmlFor="content">
                             Details
                         </label>
-                        <input
+                        <textarea
                             className="form-control"
                             type="text"
                             id="content"
