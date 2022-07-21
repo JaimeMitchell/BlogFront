@@ -1,6 +1,6 @@
 # MERN Blog
 
-https://jaimeblogapi.netlify.app/
+https://jaimesblogapi.netlify.app/
 
 ## Programs:
 
