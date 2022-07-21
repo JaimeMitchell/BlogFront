@@ -2,7 +2,6 @@ import NavBar from "../layout/NavBar";
 import { useEffect, useState } from "react";
 import axios from 'axios'
 import CreateBlog from '../forms/CreateBlog'
-import UpdateBlog from '../forms/UpdateBlog'
 import { useHistory } from "react-router-dom"
 const Home = (props) => {
 
