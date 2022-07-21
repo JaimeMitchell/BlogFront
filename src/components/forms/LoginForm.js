@@ -17,7 +17,7 @@ const LoginForm = (props) => {
         e.preventDefault();
         console.log(formData);
 
-        axios.post("http://localhost:4000/auth", formData).then((res) => {
+        axios.post("https://jaimeblogapi.herokuapp.com/auth", formData).then((res) => {
             console.log(res.data);
 
             if (res.data.token && res.data.user) {

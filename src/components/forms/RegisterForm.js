@@ -19,7 +19,7 @@ const RegisterForm = (props) => {
     e.preventDefault()
     console.log(formData)
 
-    axios.post('http://localhost:4000/user', formData)
+    axios.post('https://jaimeblogapi.herokuapp.com/user', formData)
       .then(res => {
         console.log(res.data)
 

@@ -9,7 +9,7 @@ const UpdateBlog = (props) => {
 
     useEffect(() => {
         axios
-            .get(`http:///localhost:4000/blog/${id}`, {
+            .get(`https://jaimeblogapi.herokuapp.com/blog/${id}`, {
                 headers: {
                     "x-auth-token": localStorage.getItem("userToken"),
                 },
@@ -23,7 +23,7 @@ const UpdateBlog = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.put(`http://localhost:4000/blog/${id}`, blog, {
+        axios.put(`https://jaimeblogapi.herokuapp.com/blog/${id}`, blog, {
             headers: {
                 'x-auth-token': localStorage.getItem("userToken")
             }

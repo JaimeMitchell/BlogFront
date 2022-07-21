@@ -13,7 +13,7 @@ const Home = (props) => {
   const history = useHistory()
 
   useEffect(() => {
-    axios.get('http://localhost:4000/blog', {
+    axios.get('https://jaimeblogapi.herokuapp.com/blog', {
       headers: {
         'x-auth-token': localStorage.getItem("userToken")
       }
@@ -28,7 +28,7 @@ const Home = (props) => {
 
   const handleDelete = (blog) => {
     axios
-      .delete(`http://localhost:4000/blog/${blog._id}`, {
+      .delete(`https://jaimeblogapi.herokuapp.com/blog/${blog._id}`, {
         headers: {
           "x-auth-token": localStorage.getItem("userToken"),
         },
