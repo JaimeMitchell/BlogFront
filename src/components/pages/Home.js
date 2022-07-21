@@ -3,13 +3,15 @@ import { useEffect, useState } from "react";
 import axios from 'axios'
 import CreateBlog from '../forms/CreateBlog'
 import UpdateBlog from '../forms/UpdateBlog'
-import {useHistory} from "react-router-dom"
+import { useHistory } from "react-router-dom"
 const Home = (props) => {
 
   const [blogs, setBlogs] = useState(null)
 
   const [gif, setGif] = useState(null)
+
   const history = useHistory()
+
   useEffect(() => {
     axios.get('http://localhost:4000/blog', {
       headers: {
@@ -41,8 +43,8 @@ const Home = (props) => {
   const handleUpdate = (blog) => {
     history.push(`/update/${blog._id}`);
   };
-  
-  
+
+
   return (
     <div className="container ">
       <NavBar user={props.user} />
@@ -50,11 +52,11 @@ const Home = (props) => {
       <h2 className='text-center'>Write a li'l blog</h2>
 
       <CreateBlog className="p-3" setBlogs={setBlogs} blogs={blogs} />
-      <UpdateBlog className="p-3" setBlogs={setBlogs} blogs={blogs} />
+      {/* <UpdateBlog className="p-3" setBlogs={setBlogs} blogs={blogs} /> */}
       <div className="row P3">
         {blogs && blogs.map(blog => (
-          <div key={blog._id} className="card col-4 g-3 p-3 rounded-3"  style={{ width: "18rem"  }} >
-            {gif.data.length > 0 ? <img alt="gif" src={gif.data[Math.floor(Math.random() * 10)].images.original.url} className="card-img-top rounded-1 P-3" /> : null}
+          <div key={blog._id} className="card col-4 g-3 p-3 rounded-3" style={{ width: "18rem" }} >
+            {gif && gif.data.length > 0 ? <img alt="gif" src={gif.data[Math.floor(Math.random() * 10)].images.original.url} className="card-img-top rounded-1 P-3" /> : null}
             <div className="card-body p-2 g-2 border bg-light ">
               <h5 className="card-title">{blog.title}</h5>
               <p>{blog.content}{" "} </p>
@@ -68,16 +70,16 @@ const Home = (props) => {
                 </span>
 
               )}
-              
-             {
-              blog.user === props.user._id && (
+
+              {
+                blog.user === props.user._id && (
                   <button
                     className='btn btn-danger'
                     onClick={() => handleDelete(blog)}>
                     Delete
                   </button>
-              )
-             }
+                )
+              }
 
             </div>
 
