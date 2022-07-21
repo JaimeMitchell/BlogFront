@@ -1,5 +1,7 @@
 # MERN Blog
 
+https://jaimeblogapi.netlify.app/
+
 ## Programs:
 
 ### Mongoose, Express, React, NodeJS
@@ -20,3 +22,6 @@
 2. Open http://localhost:3000 then run "npm start" in the frontend blogfront react-app folder.
 
 ## Deployment
+
+1. Heroku for backend
+2. Netlify for frontend
