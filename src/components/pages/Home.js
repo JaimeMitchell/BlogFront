@@ -12,7 +12,7 @@ const Home = (props) => {
   const history = useHistory()
 
   useEffect(() => {
-    axios.get('https://62daa282d0ae9c1a336b5f1d--jaimeblogapi.netlify.app/blog', {
+    axios.get('https://jaimeblogapi.herokuapp.com/blog', {
       headers: {
         'x-auth-token': localStorage.getItem("userToken")
       }
@@ -27,7 +27,7 @@ const Home = (props) => {
 
   const handleDelete = (blog) => {
     axios
-      .delete(`https://62daa282d0ae9c1a336b5f1d--jaimeblogapi.netlify.app/blog/${blog._id}`, {
+      .delete(`https://jaimeblogapi.herokuapp.com/blog/${blog._id}`, {
         headers: {
           "x-auth-token": localStorage.getItem("userToken"),
         },

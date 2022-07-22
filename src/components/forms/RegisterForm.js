@@ -19,7 +19,7 @@ const RegisterForm = (props) => {
     e.preventDefault()
     console.log(formData)
 
-    axios.post('https://62daa282d0ae9c1a336b5f1d--jaimeblogapi.netlify.app/user', formData)
+    axios.post('https://jaimeblogapi.herokuapp.com/user', formData)
       .then(res => {
         console.log(res.data)
 
