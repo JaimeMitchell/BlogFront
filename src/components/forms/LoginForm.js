@@ -12,12 +12,11 @@ const LoginForm = (props) => {
     // const handleChange = (e) => {
     //     setFormData({...formData, [e.target.id]: e.target.value})
     // }
-
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log(formData);
 
-        axios.post("https://jaimeblogapi.herokuapp.com/auth", formData).then((res) => {
+        axios.post("https://62daa282d0ae9c1a336b5f1d--jaimeblogapi.netlify.app/auth", formData).then((res) => {
             console.log(res.data);
 
             if (res.data.token && res.data.user) {
