@@ -1,7 +1,6 @@
 # MERN Blog
 
-https://jaimesblogapi.netlify.app/
-
+https://jaimeblogapi.netlify.app/
 ## Programs:
 
 ### Mongoose, Express, React, NodeJS
